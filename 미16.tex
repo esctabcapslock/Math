@@ -1,0 +1,233 @@
+%비머
+%\documentclass[aspectratio=169]{beamer}% 16:9
+%\usetheme{Warsaw}
+
+
+\documentclass[chapter, oneside]{oblivoir}
+\usepackage{kotex}
+
+% 뭐임
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+
+
+
+%--------- 멋대로 정의해본 명령어
+\newcommand{\dx}[1]{\operatorname{d}\! #1}
+\newcommand{\term}[1]{\textbf{#1}}
+
+
+
+
+\title{미II 16단원 :: 적분과 벡터장}
+\author{미II를 공부하는 사람. }
+
+\makeindex
+
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+미적분 II 16단원 공부를 위해 만들어 봤습니다. 내용을 봐보고 뭔가 복잡함에 충격!!받아서 이렇게 세세히 구경해(?) 보기로 마음먹었어요. 음 뭐 더 쓸말이 있나? 하여튼 타자 치는데 3시간 걸렸다는 것이 문제. 이럴줄 알았으면 15단원 연습문제나 풀걸...
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\setcounter{chapter}{15}
+\chapter{적분과 벡터장  }
+\section{선적분 }
+\subsection{선적분의 정의 }
+실함수 $f$가 $\textbf{r}(t) = g(t)\textbf{i} +h(t) \textbf{j} + k(t)\textbf{k}$, $a \le t \le b$로 매개화된 곡선 $C$에서 정의될 때, $C$에서의 $f$의 선적분을 다음 같이 정의한다.
+(극한이 존재할 때)
+
+$$ \int_{C} f(x,y,z) ds = \lim_{n \to \infty} sum_{k=1}^{n} f(x_k , y_k , z_k ) \Delta S_k $$
+
+\subsection{선적분의 계산 }
+
+곡선 $C$에서 정의된 연속함수 $f(x,y,z)$는 다음과 같이 적분한다.
+\begin{enumerate}
+\item $C$를 연속함수로 매개화한다. 
+\item 다음과 같이 적분을 계산한다.
+\end{enumerate}
+
+$$ \textbf{r}(t) = g(t)\textbf{i} +h(t) \textbf{j} + k(t)\textbf{k}, \quad a \le t \le b $$
+$$ \int_C f(x,y,z) ds = \int_a^b f(g(t),h(t), k(t)) \left|\textbf{v}(t)\right| dt$$
+
+
+\section{벡터장과 적분}
+\subsection{선적분의 정의 }
+
+$\textbf{r}(t)$, $a \le t \le b$로 매개화된 매끄러운 곡선 $C$에서 정외되었고, 각 성분이 연속인 벡터장 $F$에 대해서 $F$의  $C$에서의 선적분을 다음과 같이 정의한다.
+
+$$ \int_{C} \textbf{F} \cdot \textbf{T} ds = \int_{\textbf{C}} \left( \textbf{F} \cdot \frac{d \textbf{r}}{ds} \right) ds = \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r}$$
+
+
+\subsection{선적분의 계산}
+$F$가 $t$애 대한 함수이고, $r$이 위와 같이 정의될 때, 선적분을 다음과 같이 계산할 수 있다.
+$$ \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r} = \int_a^b \textbf{F}(\textbf{r}(t)) \cdot \frac{d\textbf{r}}{dt} dt $$
+
+
+\subsection{유동(flow)}
+$\textbf{r}(t)$로 매개화된 매끄러운 곡선 $C$에서 정외되었고, 연속인 속도장 $F$에 대해서, $A=\textbf{r}(a)$에서 $B=\textbf{r}(b)$까자의 \term{유동}을 다음과 같이 정의한다.
+
+$$ \int _{C} \textbf{F} \cdot {T} \dx{s}.$$
+
+이것을 유동적분이라고 부른다. 만일 $A=B$라면, 이 유동은 \term{순환}이라고 부른다. 
+
+
+\subsection{유출(flux)}
+$C$가 단순 닫힘 곡선일 때, 이를 정의역으로 갖는 벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$을 생각하자. 그리고 $\textbf{n}$은, $C$위에서 움직이고, 바깥을 향하는 단위 법선벡터일 때, $\textbf{C}$를 가로지르는 $\textbf{F}$의 유출을 다음과 같이 정의한다.
+
+$$ \int _{C} \textbf{F} \cdot {n} \dx{s}.$$
+
+
+
+\subsection{유출의 계산}
+$C$가, 연속인 함수 $x=g(t)$, $y=h(t)$, $a \le t \le b$로, 반시계방향(counterclockwise)으로 매개회된 곡선이며, 
+벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$이 주어졌을 때,
+$C$를 가로지르는 $\textbf{F} $의 유출은 다음과 같이 계산한다.
+
+$$\oint_{\textbf{C}} M dy - N dx$$
+
+
+\section{경로 독립, 보존장, 퍼텐셜 함수}
+\subsection{경로 독립}
+$\textbf{F}$는 열린 영역 $D$에서 정의된 벡터장이라고 하자. 그리고 $D$ 위의 어떤 두 점 $A$와 $B$에 대해, 두 점을 잇는 $\textbf{D}$상의 모든 경로 $C$에 대해 $\oint_C \textbf{F} \cdot d\textbf{r} $이 일정하다면, $\oint_C \textbf{F} \cdot d\textbf{r} $는 $D$에서 \term{경로 독립}이며, $F$는 $D$에서 \term{보존적 벡터장}이다.
+
+\subsection{퍼텐셜 함수}
+벡터장 $\textbf{F}$가 $D$에서 정의되었고, $\textbf{F} = \nabla f$인 스칼라 함수 $f$가 $D$에 존재한다면, $f$를 $F$의 \term{퍼텐셜 함수}라고 부른다.
+
+\subsection{선적분의 기본정리 }
+
+$C$를 점 $A$와 점$B$를 잇는, $\textbf{r}(t)$로 매개화된 매끄러운 곡선이라고 하자. $C$를 포함하는 어떤 영역 $D$에서 $\textbf{F} = \nabla f$를 만족하는 미분가능한 함수 $f$가 존재할 때 다음이 성립한다.
+$$ \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r} = f(B)-f(A)$$
+
+\subsection{기울기 벡터장과 보존적 벡터장의 관계}
+연결된 열린영역 $\textbf{D}$에서, 각 성분이 연속인 $\textbf{F}$에 대해, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
+$$\textbf{F} = \nabla f \text{인, 미분 가능한 }f\text{가 존재한다.}$$
+
+
+\subsection{닫힌 곡선에서 보존적 벡터장의 성질}
+연결된 열린영역 $D$에서 정의된 벡터장 $\textbf{F}$과 모든 닫힌곡선 $C$에서, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
+
+$$\oint_C \textbf{F} \cdot dr=0$$
+
+\subsection{보존장의 성분 판정법 }
+열린 단순연결영역에서 정의되었고, 각 성분의 편도함수가 연속인 $\textbf{F}=M(x,y,z)\textbf{i} + N(x,y,z)\textbf{j} +P(x,y,z)\textbf{k}$에 대해, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
+$$ \frac{\partial P}{\partial y}=\frac{\partial N}{\partial z} \quad \land \quad \frac{\partial M}{\partial z}=\frac{\partial P}{\partial x} \quad \land \quad \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} $$
+
+\subsection{완전미분형식의 정의}
+$\textbf{F}=M\textbf{i}+N\textbf{j}+P\textbf{k}$이고, $M$, $N$, $P$ 가 스칼라장일 때, 
+$$ M dx + N dy + P dz$$
+꼴로 쓴 식을 \term{일차미분형식}이라 부른다. 
+일차미분형식이 어떤 $f$의 전미분이 된다면, 이 일차미분형식을 \term{완전미분형식}(exact diffenential form)이라고 부른다.
+ $F$가 보존적 벡터장이면, 일차미분형식은 완전미분형식이 된다.
+
+
+\section{평면에서의 그린정리}
+\subsection{순환밀도, 회전 }
+벡터장 $\textbf{F}=M\textbf{i}+N\textbf{j}$의 점$(x,y)$에서 \term{순환밀도}, 또는 \term{회전(curl)의 k성분}는 다음과 같이 정의된다.
+$$\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} $$
+
+이는 $\nabla \times \textbf{F} \cdot \textbf{k}$로 구해진다.
+
+\subsection{유출밀도, 발산}
+벡터장 $\textbf{F}=M\textbf{i}+N\textbf{j}$의 점$(x,y)$에서 \term{유출밀도}, 또는 \term{발산}(divergence)은 다음과 같이 정의된다.
+$$ \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}$$
+
+\subsection{그린정리 (순환-회전공식, 접선공식)}
+$C$는 조각마다 매끄럽고, 영역 $R$에서의 단순닫힌곡선이다.
+$F=M\textbf{i}+N\textbf{j}$는 $R$에서  $M$과 $N$의 편도함수가 연속인 벡터장이다.
+이때, 다음이 성립한다.
+
+$$ 
+\oint_C \textbf{F} \cdot \textbf{T} 
+= \oint_C M dx + N dy = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx dy 
+= \iint_R \left( \operatorname{curl} F \right)\cdot k dA $$
+
+\subsection{그린정리 (유출량-발산공식, 법선공식)}
+$C$는 조각마다 매끄럽고, 영역 $R$에서의 단순닫힌곡선이다.
+$F=M\textbf{i}+N\textbf{j}$는 $R$에서  $M$과 $N$의 편도함수가 연속인 벡터장이다.
+이때, 다음이 성립한다.
+
+$$ \oint_C \textbf{F} \cdot n = \oint_C M dy - N dx = \iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial n}{\partial y} \right) dx dy
+= \iint_R \left( \operatorname{div} F \right) dA  $$
+
+
+\section{곡면과 면적}
+\subsection{곡면의 매끄러움}
+매개변수화된 곡면 $\textbf{r}(u,v) = f(u,v)\textbf{i}+g(u,v)\textbf{j}+h(u,v)\textbf{k}$에 대해, $\textbf{r}_u$, $\textbf{r}_v$가 연속이고, $\textbf{r}_u \times \textbf{r}_v \neq 0$이면, 이 곡면을 \term{매끄럽다}고 한다.
+
+\subsection{면적}
+$\textbf{r}(u,v) = f(u,v)\textbf{i}+g(u,v)\textbf{j}+h(u,v)\textbf{k}$이고, $a \le u \le b$, $c \le v \le d$인 매끄러운 곡면의 면적은 다음과 같다.
+$$ A=
+\iint_R \left| \textbf{r}_u \times \textbf{r}_v \right| dA
+= \int_c^d\int_a^b \left| \textbf{r}_u \times \textbf{r}_v \right| dudv $$
+
+\subsection{면적의 미분소}
+
+$$d \sigma = \left| \textbf{r}_u \times \textbf{r}_v \right| dudv  \quad \iint_S d \sigma$$
+
+
+\subsection{음함수로 표현된 곡면의 넓이}
+닫혀있고 유계인 영역 $R$에서 정의된 $\textbf{F}(x,y,z)=c$에 대해 곡면의 넓이는 다음과 같다.
+$$\iint_R \frac{\left| \nabla \textbf{F} \right|}{\left| \nabla \textbf{F} \cdot \textbf{p} \right|} dA $$
+
+단, $\textbf{p}$는 $R$에 수직이고  $\nabla \textbf{F} \cdot \textbf{p} \ne 0$
+
+\subsection{$z=f(x,y)$꼴의 곡면의 넓이}
+$xy$-평면 위의 영역 $R$에서 정의된 그래프 $z=f(x,y)$의 곡면의 넓이는 다음과 같다.
+$$ \iint_R \sqrt{f_x^2 + f_y^2 + 1} \ dx dy $$
+
+\section{면적분}
+\subsection{면적분의 정의}
+표면 $S$에서 정의된 실수값 함수 $G$의 \term{면적분}은 다음과 같이 정의한다.
+$$ \iint_S G(x,y,z) d\sigma = \lim_{n \to \infty}\sum_{k=1}^{n} G(x_k , y_k , z_k ) \Delta \sigma_k $$
+\subsection{면적분의 계산}
+1. 매끄러운 곡면 $S$가 $\textbf{r}(u,v) = f(u,v)\textbf{i}+g(u,v)\textbf{j}+h(u,v)\textbf{k},\ (u,v) \in R$로 매개화될때, $R$에서의 이중적분으로 계산할 수 있다.
+
+$$ \iint_S G(x,y,z) d\sigma = \iint_R G(f(u,v), g(u,v), h(u,v)) \left| \nabla \textbf{F} \cdot \textbf{p} \right| du dv $$
+
+2. $S$가 $F(x,y,z)=c$형태의 음함수 꼴로 표현될 때, (단, $F$는 연속적으로 미분가능) $R$에서의 이중적분으로 계산할 수 있다.
+$$ \iint_S G(x,y,z) d\sigma = \iint_R G(x,y,z) \frac{\left| \nabla \textbf{F} \right|}{\left| \nabla \textbf{F} \cdot \textbf{p} \right|} dA $$
+
+3. $S$가 $z=f(x,y)$꼴로 주어졌을 때, (단, $f$는 $xy$-평면에서 연속적으로 미분가능)  $R$에서의 이중적분으로 계산할 수 있다.
+$$ \iint_S G(x,y,z) d\sigma = \iint_R G(x,y,z) \sqrt{f_x^2 + f_y^2 + 1} \ dx dy $$
+
+\subsection{면적분의 정의(벡터장)}
+$F$는 3차원공간에서 정의된 벡터장이다. 매끄러운 곡면 $S$에 대해 $S$에서 $F$의 \term{면적분}은 다음과 같다. ($\textbf{n}$은 $S$의 단위접선벡터). 이는 $S$를 가로지르는 $F$의 발산이다.
+
+$$ \iint_S \textbf{F} \cdot \textbf{n} d\sigma$$
+
+
+\section{스토크스 정리}
+\subsection{스토크스 정리}
+조각마다 매끄러운 표면 $S$와, 그것의 경계 $C$를 생각하자. $\textbf{n}$은 $S$에 수직한 단위법선벡터이다. $S$에서 연속인 편도함수를 갖는 벡터장 $\textbf{F}$에 대해 다음이 성립한다.
+$$\oint_C \textbf{F} \cdot d\textbf{r} = \iint_S \nabla \times \textbf{F} \cdot \textbf{n} d\sigma $$
+
+\subsection{회전과 보존장}
+영역 $D$의 모든 점에서 $\nabla \times \textbf{F} = 0$이면, $\textbf{F}$는 보존적이다.
+
+\section{발산정리}
+\subsection{발산정리}
+조각마다 매끄러운 닫힌곡면 $S$를 생각하자. $\textbf{n}$은 $S$에 수직한 단위법선벡터이다. 연속인 편도함수를 갖는 벡터장 $\textbf{F}$에 대해 다음이 성립한다.
+$$\iint_S \textbf{F} \cdot \textbf{n} d\sigma = \iiint_D \nabla \cdot \textbf{F} dV $$
+
+\subsection{발산과 회전}
+$F$는 이계 편미분함수가 연속인 벡터장이다. 그렇다면 다음을 만족한다.
+$$ \nabla \cdot \left( \nabla \textbf{F} \right) = 0 $$
+
+
+%\begin{itemize}
+%\end{itemize}
+
+ 
+
+
+\end{document}
