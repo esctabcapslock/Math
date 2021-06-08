@@ -192,7 +192,7 @@ $$ \iint_S G(x,y,z) d\sigma = \lim_{n \to \infty}\sum_{k=1}^{n} G(x_k , y_k , z_
 \subsection{면적분의 계산}
 1. 매끄러운 곡면 $S$가 $\textbf{r}(u,v) = f(u,v)\textbf{i}+g(u,v)\textbf{j}+h(u,v)\textbf{k},\ (u,v) \in R$로 매개화될때, $R$에서의 이중적분으로 계산할 수 있다.
 
-$$ \iint_S G(x,y,z) d\sigma = \iint_R G(f(u,v), g(u,v), h(u,v)) \left| \nabla \textbf{F} \cdot \textbf{p} \right| du dv $$
+$$ \iint_S G(x,y,z) d\sigma = \iint_R G(f(u,v), g(u,v), h(u,v))\left| \textbf{r}_u \times \textbf{r}_v \right| du dv $$
 
 2. $S$가 $F(x,y,z)=c$형태의 음함수 꼴로 표현될 때, (단, $F$는 연속적으로 미분가능) $R$에서의 이중적분으로 계산할 수 있다.
 $$ \iint_S G(x,y,z) d\sigma = \iint_R G(x,y,z) \frac{\left| \nabla \textbf{F} \right|}{\left| \nabla \textbf{F} \cdot \textbf{p} \right|} dA $$
