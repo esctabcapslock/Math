@@ -46,7 +46,7 @@
 실함수 $f$가 $\textbf{r}(t) = g(t)\textbf{i} +h(t) \textbf{j} + k(t)\textbf{k}$, $a \le t \le b$로 매개화된 곡선 $C$에서 정의될 때, $C$에서의 $f$의 선적분을 다음 같이 정의한다.
 (극한이 존재할 때)
 
-$$ \int_{C} f(x,y,z) ds = \lim_{n \to \infty} sum_{k=1}^{n} f(x_k , y_k , z_k ) \Delta S_k $$
+$$ \int_{C} f(x,y,z) ds = \lim_{n \to \infty} \sum_{k=1}^{n} f(x_k , y_k , z_k ) \Delta S_k $$
 
 \subsection{선적분의 계산 }
 
@@ -65,12 +65,12 @@ $$ \int_C f(x,y,z) ds = \int_a^b f(g(t),h(t), k(t)) \left|\textbf{v}(t)\right| d
 
 $\textbf{r}(t)$, $a \le t \le b$로 매개화된 매끄러운 곡선 $C$에서 정외되었고, 각 성분이 연속인 벡터장 $F$에 대해서 $F$의  $C$에서의 선적분을 다음과 같이 정의한다.
 
-$$ \int_{C} \textbf{F} \cdot \textbf{T} ds = \int_{\textbf{C}} \left( \textbf{F} \cdot \frac{d \textbf{r}}{ds} \right) ds = \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r}$$
+$$ \int_{C} \textbf{F} \cdot \textbf{T} ds = \int_{C} \left( \textbf{F} \cdot \frac{d \textbf{r}}{ds} \right) ds = \int_{C} \textbf{F} \cdot d\textbf{r}$$
 
 
 \subsection{선적분의 계산}
 $F$가 $t$애 대한 함수이고, $r$이 위와 같이 정의될 때, 선적분을 다음과 같이 계산할 수 있다.
-$$ \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r} = \int_a^b \textbf{F}(\textbf{r}(t)) \cdot \frac{d\textbf{r}}{dt} dt $$
+$$ \int_{C} \textbf{F} \cdot d\textbf{r} = \int_a^b \textbf{F}(\textbf{r}(t)) \cdot \frac{d\textbf{r}}{dt} dt $$
 
 
 \subsection{유동(flow)}
@@ -82,7 +82,7 @@ $$ \int _{C} \textbf{F} \cdot {T} \dx{s}.$$
 
 
 \subsection{유출(flux)}
-$C$가 단순 닫힘 곡선일 때, 이를 정의역으로 갖는 벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$을 생각하자. 그리고 $\textbf{n}$은, $C$위에서 움직이고, 바깥을 향하는 단위 법선벡터일 때, $\textbf{C}$를 가로지르는 $\textbf{F}$의 유출을 다음과 같이 정의한다.
+$C$가 단순 닫힘 곡선일 때, 이를 정의역으로 갖는 벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$을 생각하자. 그리고 $\textbf{n}$은, $C$위에서 움직이고, 바깥을 향하는 단위 법선벡터일 때, $C$를 가로지르는 $\textbf{F}$의 유출을 다음과 같이 정의한다.
 
 $$ \int _{C} \textbf{F} \cdot {n} \dx{s}.$$
 
@@ -93,7 +93,7 @@ $C$가, 연속인 함수 $x=g(t)$, $y=h(t)$, $a \le t \le b$로, 반시계방향
 벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$이 주어졌을 때,
 $C$를 가로지르는 $\textbf{F} $의 유출은 다음과 같이 계산한다.
 
-$$\oint_{\textbf{C}} M dy - N dx$$
+$$\oint_{C} M dy - N dx$$
 
 
 \section{경로 독립, 보존장, 퍼텐셜 함수}
@@ -106,7 +106,7 @@ $\textbf{F}$는 열린 영역 $D$에서 정의된 벡터장이라고 하자. 그
 \subsection{선적분의 기본정리 }
 
 $C$를 점 $A$와 점$B$를 잇는, $\textbf{r}(t)$로 매개화된 매끄러운 곡선이라고 하자. $C$를 포함하는 어떤 영역 $D$에서 $\textbf{F} = \nabla f$를 만족하는 미분가능한 함수 $f$가 존재할 때 다음이 성립한다.
-$$ \int_{\textbf{C}} \textbf{F} \cdot d\textbf{r} = f(B)-f(A)$$
+$$ \int_{C} \textbf{F} \cdot d\textbf{r} = f(B)-f(A)$$
 
 \subsection{기울기 벡터장과 보존적 벡터장의 관계}
 연결된 열린영역 $\textbf{D}$에서, 각 성분이 연속인 $\textbf{F}$에 대해, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
