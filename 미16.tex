@@ -1,27 +1,16 @@
-%비머
-%\documentclass[aspectratio=169]{beamer}% 16:9
-%\usetheme{Warsaw}
-
-
 \documentclass[chapter, oneside]{oblivoir}
 \usepackage{kotex}
+% 여잭백 조절
+\usepackage{fapapersize}
+\usefapapersize{210mm, 297mm,30mm,*,35mm,30mm}
 
 % 뭐임
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{mathtools}
-
-
-
 
 %--------- 멋대로 정의해본 명령어
 \newcommand{\dx}[1]{\operatorname{d}\! #1}
 \newcommand{\term}[1]{\textbf{#1}}
-
-
-
 
 \title{미II 16단원 :: 적분과 벡터장}
 \author{미II를 공부하는 사람. }
@@ -34,6 +23,8 @@
 \maketitle
 \begin{abstract}
 미적분 II 16단원 공부를 위해 만들어 봤습니다. 내용을 봐보고 뭔가 복잡함에 충격!!받아서 이렇게 세세히 구경해(?) 보기로 마음먹었어요. 음 뭐 더 쓸말이 있나? 하여튼 타자 치는데 3시간 걸렸다는 것이 문제. 이럴줄 알았으면 15단원 연습문제나 풀걸...
+
+하여튼 이 것은 Thomas Calculus Early Transcendentals 13판 16단원의 굵은 사각형 속 내용들을 옮긴 것입니다.
 \end{abstract}
 
 \newpage
@@ -76,7 +67,7 @@ $$ \int_{C} \textbf{F} \cdot d\textbf{r} = \int_a^b \textbf{F}(\textbf{r}(t)) \c
 \subsection{유동(flow)}
 $\textbf{r}(t)$로 매개화된 매끄러운 곡선 $C$에서 정외되었고, 연속인 속도장 $F$에 대해서, $A=\textbf{r}(a)$에서 $B=\textbf{r}(b)$까자의 \term{유동}을 다음과 같이 정의한다.
 
-$$ \int _{C} \textbf{F} \cdot {T} \dx{s}.$$
+$$ \int _{C} \textbf{F} \cdot {\textbf{T}} \dx{s}.$$
 
 이것을 유동적분이라고 부른다. 만일 $A=B$라면, 이 유동은 \term{순환}이라고 부른다. 
 
@@ -84,7 +75,7 @@ $$ \int _{C} \textbf{F} \cdot {T} \dx{s}.$$
 \subsection{유출(flux)}
 $C$가 단순 닫힘 곡선일 때, 이를 정의역으로 갖는 벡터장 $\textbf{F}  = \textbf{M}(x,y)\textbf{i} + \textbf{N}(x,y)\textbf{j}$을 생각하자. 그리고 $\textbf{n}$은, $C$위에서 움직이고, 바깥을 향하는 단위 법선벡터일 때, $C$를 가로지르는 $\textbf{F}$의 유출을 다음과 같이 정의한다.
 
-$$ \int _{C} \textbf{F} \cdot {n} \dx{s}.$$
+$$ \int _{C} \textbf{F} \cdot {\textbf{n}} \dx{s}$$
 
 
 
@@ -98,10 +89,10 @@ $$\oint_{C} M dy - N dx$$
 
 \section{경로 독립, 보존장, 퍼텐셜 함수}
 \subsection{경로 독립}
-$\textbf{F}$는 열린 영역 $D$에서 정의된 벡터장이라고 하자. 그리고 $D$ 위의 어떤 두 점 $A$와 $B$에 대해, 두 점을 잇는 $\textbf{D}$상의 모든 경로 $C$에 대해 $\oint_C \textbf{F} \cdot d\textbf{r} $이 일정하다면, $\oint_C \textbf{F} \cdot d\textbf{r} $는 $D$에서 \term{경로 독립}이며, $F$는 $D$에서 \term{보존적 벡터장}이다.
+$\textbf{F}$는 열린 영역 $D$에서 정의된 벡터장이라고 하자. 그리고 $D$ 위의 어떤 두 점 $A$와 $B$에 대해, 두 점을 잇는 ${D}$상의 모든 경로 $C$에 대해 $\int_C \textbf{F} \cdot d\textbf{r} $이 일정하다면, $\int_C \textbf{F} \cdot d\textbf{r} $는 $D$에서 \term{경로 독립}이며, $F$는 $D$에서 \term{보존적 벡터장}이다.
 
 \subsection{퍼텐셜 함수}
-벡터장 $\textbf{F}$가 $D$에서 정의되었고, $\textbf{F} = \nabla f$인 스칼라 함수 $f$가 $D$에 존재한다면, $f$를 $F$의 \term{퍼텐셜 함수}라고 부른다.
+벡터장 $\textbf{F}$가 $D$에서 정의되었고, $\textbf{F} = \nabla f$인 스칼라 함수 $f$가 $D$에 존재한다면, $f$를 $\textbf{F}$의 \term{퍼텐셜 함수}라고 부른다.
 
 \subsection{선적분의 기본정리 }
 
@@ -109,7 +100,7 @@ $C$를 점 $A$와 점$B$를 잇는, $\textbf{r}(t)$로 매개화된 매끄러운
 $$ \int_{C} \textbf{F} \cdot d\textbf{r} = f(B)-f(A)$$
 
 \subsection{기울기 벡터장과 보존적 벡터장의 관계}
-연결된 열린영역 $\textbf{D}$에서, 각 성분이 연속인 $\textbf{F}$에 대해, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
+연결된 열린영역 ${D}$에서, 각 성분이 연속인 $\textbf{F}$에 대해, $\textbf{F}$가 보존적인 것은 다음과 동치이다.
 $$\textbf{F} = \nabla f \text{인, 미분 가능한 }f\text{가 존재한다.}$$
 
 
@@ -149,15 +140,15 @@ $F=M\textbf{i}+N\textbf{j}$는 $R$에서  $M$과 $N$의 편도함수가 연속�
 $$ 
 \oint_C \textbf{F} \cdot \textbf{T} 
 = \oint_C M dx + N dy = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx dy 
-= \iint_R \left( \operatorname{curl} F \right)\cdot k dA $$
+= \iint_R \left( \operatorname{curl} \textbf{F} \right)\cdot k dA $$
 
 \subsection{그린정리 (유출량-발산공식, 법선공식)}
 $C$는 조각마다 매끄럽고, 영역 $R$에서의 단순닫힌곡선이다.
 $F=M\textbf{i}+N\textbf{j}$는 $R$에서  $M$과 $N$의 편도함수가 연속인 벡터장이다.
 이때, 다음이 성립한다.
 
-$$ \oint_C \textbf{F} \cdot n = \oint_C M dy - N dx = \iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial n}{\partial y} \right) dx dy
-= \iint_R \left( \operatorname{div} F \right) dA  $$
+$$ \oint_C \textbf{F} \cdot \textbf{n} = \oint_C M dy - N dx = \iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial n}{\partial y} \right) dx dy
+= \iint_R \left( \operatorname{div} \textbf{F} \right) dA  $$
 
 
 \section{곡면과 면적}
@@ -172,7 +163,7 @@ $$ A=
 
 \subsection{면적의 미분소}
 
-$$d \sigma = \left| \textbf{r}_u \times \textbf{r}_v \right| dudv  \quad \iint_S d \sigma$$
+$$d \sigma = \left| \textbf{r}_u \times \textbf{r}_v \right| dudv $$
 
 
 \subsection{음함수로 표현된 곡면의 넓이}
