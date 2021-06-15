@@ -1,0 +1,210 @@
+\documentclass[oneside]{oblivoir}
+\usepackage{kotex}
+
+% 뭐임
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{ruby}
+%\usepackage{CJKutf8}
+%https://tex.stackexchange.com/questions/95729/typesetting-furigana-above-and-below-original-text#
+%--------- 멋대로 정의해본 명령어
+
+% 여잭백 조절
+\usepackage{fapapersize}
+\usefapapersize{210mm, 297mm,30mm,*,35mm,30mm}
+
+
+\newcommand{\dx}[1]{\operatorname{d}\! #1}
+\newcommand{\term}[1]{\textbf{#1}}
+
+\title{선대 :: 정의 복습}
+\author{선대를 공부하는 사람. }
+%\makeindex
+\begin{document}
+\maketitle
+\begin{abstract}
+선대 정의 정리하기. 두둥.
+\end{abstract}
+
+\newpage
+%\tableofcontents
+
+\setcounter{section}{0}
+\section{집합과 함수}
+\subsection{함수}
+\begin{itemize}
+    \item 단사함수, one-to-one, injective, $f(s)=f(s') \Rightarrow s=s'$
+    \item 전사함수, onto, surjective, $\mathrm{Im}(f)=T$
+    \item 전단사함수, one-to-one correspondence, bijective
+\end{itemize}
+
+\subsection{치환}
+
+
+\section{군과 체}
+\subsection{군}
+집합 $G$와 이항연산 $\ast$에 대해, 군 $\left\langle G,\ast \right\rangle$은 다음 조건을 만족
+\begin{enumerate}
+    \item $G$는 $\ast$에 닫혀있음
+    \item $\ast$는 \ruby{결합법칙}{associative} 만족
+    \item 항등원 존재
+    \item 모든 원소에 역원 존재 ($s \ast t = t \ast s = e $)
+\end{enumerate}
+
+\subsection{환}
+집합 $R$과 연산 $+$, $\cdot$에 대해서 다음을 만족
+\begin{enumerate}
+    \item $\left\langle R, + \right\rangle$는 덧셈군(=가환)
+    \item $\left\langle R, \cdot \right\rangle$는 반군 (덧셈, 결합법칙 有)
+    \item 분배법칙 성립. $a(b+c)=ab+ac$
+\end{enumerate}
+
+\subsection{체}
+다음을 만족하는 환 $K$를 체라고 함.
+\begin{enumerate}
+    \item 가환환 (commutative ring), ($=$교환법칙 성립)
+    \item ring with unity ($\cdot$의 항등원 존재)
+\end{enumerate}
+
+
+\section{벡터공간과 선형변환}
+\subsection{벡터공간}
+체 $K$, 덧셈군 $V$에 대해,
+ $K \times V \to V$인 스칼라 연산이 존재.
+ 그리고 다음을 만족
+\begin{enumerate}
+    \item $\left\langle  V,+ \right\rangle$는 가환군
+    \item $(\lambda \mu)v = \lambda(\mu v) $
+    \item $(\lambda + \mu) v =\lambda v + \mu v$
+    \item $\lambda (v + w) = \lambda v + \lambda w$
+    \item $1 v = v$
+\end{enumerate}
+
+\subsection{선형변환}
+같은 체 $K$위에 정의된 두 벡터공간 $V$, $V'$에 대해,
+함수 $T : V \to V'$이 다음을 만족하면 선형 변환임.
+\begin{enumerate}
+    \item $T(v+w) = T(v)+T(w)$
+    \item $T(\lambda v) = \lambda T(v)$
+\end{enumerate}
+%\begin{itemize}
+%\end{itemize}
+
+\section{차원}
+\subsection{랭크-널리티 정리}
+선형 변환 $T : V \to W$에 대하여\dots
+\begin{itemize}
+    \item $\mathrm{dim} (\mathrm{rank} (T)) = \mathrm{rk} (T)$
+    \item $\mathrm{dim} (\mathrm{Ker} (T)) = \mathrm{null} (T)$
+    \item $\mathrm{rank} (T)+\mathrm{nullity} (T)= \mathrm{dim} (V)$
+\end{itemize}
+
+
+\section{행렬}
+\subsection{행렬의 성분의 표현}
+$$\textbf{A}_i^j = a_{ij} (\text{옳은 표현인지 모름})$$ 
+$$e_i^T \textbf{A} = A_i$$
+$$\textbf{A} e_j = A^j$$
+
+
+\subsection{계수행렬과 첨가행렬}
+$ Ax=B$에서, 
+\begin{itemize}
+    \item $A$는 \ruby{\term{계수행렬}}{coefficient matrix}
+    \item $\left(A|B\right)$는 \ruby{\term{첨가행렬}}{augmented matrix}
+\end{itemize}
+
+
+
+\section{선형변환과 행렬표현}
+실은 둘이 같음. 일단 서로 동형이며, 선형변환의 합성은 행렬의 곱임.
+\subsection{쌍대공간}
+\subsection{기저의 변환}
+
+
+\section{내적공간}
+\subsection{실내적공간}
+사상 $V \times V \to \mathbb{R}, \left( v, w, \right) \mapsto \left\langle v | w \right\rangle$이 정의된
+벡터공간 $V$
+\begin{enumerate}
+    \item $\left\langle v | v \right\rangle \ge 0 $이며, 등호는 $v=0$때만
+    \item $\left\langle v | w \right\rangle = \left\langle w | v \right\rangle$
+    \item \begin{itemize}
+        \item $\left\langle u+v | w \right\rangle = \left\langle u | w \right\rangle + \left\langle v | w \right\rangle$
+        \item $\left\langle av | w \right\rangle = a\left\langle v | w \right\rangle$
+    \end{itemize}
+\end{enumerate}
+
+\subsection{통상내적}
+$$\left\langle x | y \right\rangle = \sum_{i=1}^{n} x_i y_i $$
+
+\subsection{복소내적공간}
+사상 $V \times V \to \mathbb{C}, \left( v, w, \right) \mapsto \left\langle v | w \right\rangle$이 정의된
+벡터공간 $V$
+\begin{enumerate}
+    \item $\left\langle v | v \right\rangle \ge 0 $이며, 등호는 $v=0$때만
+    \item $\left\langle v | w \right\rangle = \overline{ \left\langle w | v \right\rangle }$
+    \item \begin{itemize}
+        \item $\left\langle u+v | w \right\rangle = \left\langle u | w \right\rangle + \left\langle v | w \right\rangle$
+        \item $\left\langle av | w \right\rangle = a\left\langle v | w \right\rangle$
+    \end{itemize}
+   
+\end{enumerate}
+마지막 2개는 \ruby{\term{반선형성}}{antilinearity}이라 함
+
+
+\section{행렬식}
+다음을 만족하는 사상 $\mathrm{det} : M_n (K) \mapsto K$ 을 행렬식이라 함
+\begin{enumerate}
+    \item $A_j = \lambda_1 C_1 + \lambda_2 C_2$, $\mathrm{det}(A) $ $=$ $ \lambda_1 \mathrm{det} (A^1 \cdots C_1 \cdot A^n) + \lambda_2 \mathrm{det} (A^1 \cdots C_2 \cdots A^n)$
+    \item $A = (A^1 A^2 \cdots A^n)$에서, $A^j = A^{j+1}$면, $\mathrm{det}(A)=0$
+    \item $\mathrm{det} (I_n) = 1$
+\end{enumerate}
+각각  \ruby{다중선형성}{Multilinearity}, \ruby{부호 교대성질}{Alternation of Sign}, \ruby{정규화 성질}{Normalization}이라 불림
+
+\subsection{행렬식의 표현}
+$$\mathrm{det} (A) = \sum_{j=1}^{n} (-1)^{ i+j } a_{ij} \mathrm{det}(\partial_{ij} A)$$
+$$\mathrm{det} (A) = \sum_{\pi \in S_n } \sigma(\pi) a_{\pi(1)1} \cdots  a_{\pi(n)n}$$
+후자를 이용해, $\mathrm{det} (A) = \mathrm{det} (A^{T})$임을 보일 수 있다.
+
+\subsection{여인자}
+\begin{itemize}
+    \item $C_{ij} = (-1)^{i+j} \mathrm{det} (\partial_{ij}A)$ 인 $C$를 \ruby{\term{여인자}}{cofactors}라고 부름.
+    \item $C_i^j$성분이 $C_{ij}$인 $n \times n$행렬 $C$를 \term{여인자 행렬}이라 부르며,
+    \item 이것의 전치행렬을 \ruby{\term{수반행렬}}{adjoint matrix}이라 부름.
+    \item 특히, $A^{-1} = \frac{1}{\mathrm{det}(A)} \mathrm{adj}(A)$가 성립함.
+    
+\end{itemize}
+
+\section{교윳값, 고유벡터}
+\subsection{정의}
+$T : V \to T$인 선형사상에 대해 $0$아닌 $v \in V$에 대해 $T(v) = \lambda v$를 만족시킬 때,
+$\lambda$를 \ruby{\term{고윳값}}{eigenvalue}, $0$아닌 벡터 $v$를 \ruby{\term{고유벡터}}{eigenvector}라 함.
+\subsection{특성다항식}
+$$p(t) = \mathrm{det}(t I_n - A)$$
+
+
+\section{자기준동형사상의  표현}
+
+\section{부록: $\mathrm{det}(A) \ne 0$과 동치들}
+$A \in M_n (K)$일때, 다음은 동치임.
+\begin{enumerate}
+    \item $\forall y \in K$, $A\mathbf{x}=\mathbf{y}$의 해는 최소 하나 이상
+    \item $A$의 행공간은 $K^n$
+    \item $A$의 열공간은 $K^n$
+    \item $A\mathbf{x}=\mathbf{0}$은, 자명해 $\mathbf{x}=\mathbf{0}$만 갖음
+    \item $A$의 행들은 일차독립
+    \item $A$의 열들은 일차독립
+    \item $\forall y \in K$, $A\mathbf{x}=\mathbf{y}$는 무조건 하나의 해 갖음
+    \item $A$의 행들은 $K^n$의 기저
+    \item $A$의 열들은 $K^n$의 기저
+    \item $A \in \mathrm{GL}_n(K)$
+    \item $A^T \in \mathrm{GL}_n(K)$
+    \item $\mathrm{det}(A) \ne 0$
+    \item $\mathrm{det}(A^T) \ne 0$
+\end{enumerate}
+
+\end{document}
