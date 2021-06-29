@@ -1,0 +1,33 @@
+\chapter{자기주도적 학습 과제 3 (13.1, 14.2)}
+참고. 이 장에서 따른 말이 없으면, $V$는 $n$차원 유클리드 공간을 의미하며, $D$는 $V$의 부분집합이다.
+$f$는 $f: D \to V$인 함수이다. 그리고$p \in D$, $L \in V$라고 하자.
+그리고 $\left\{ x_k \right\}$는 수열이다.
+
+\section{$V$의 두 점 $p$, $q$ 사이의 거리 구하는 공식}
+
+$p = \left\langle p_1, p_2 \cdots p_n \right\rangle$, $q = \left\langle q_1, q_2 \cdots p_n \right\rangle$라 둘 때,
+
+$$\mathrm{d}(p,q) =  |p-q| = \sqrt{\left(p_1^2 - q_1^2\right)^2 + \left(p_2^2 - q_2^2\right)^2 + \cdots + \left(p_n^2 - q_n^2\right)^2 }$$으로 구할 수 있다.
+
+
+\section{``$x \to p \Rightarrow f(x) \to L$이다''의 엄밀한 정의}  \label{chap:imt}
+$\epsilon$-$\delta$ 논법 비슷하게 정의하면 될 것 같다.
+
+$\forall \epsilon > 0$, $\exists \delta > 0$, s.t. $|p-x|< \epsilon \Rightarrow |L - f(x)| < \epsilon$
+
+\section{``$f$가 $p$에서 연속이다''의 엄밀한 정의}
+$x \in D$, $x \to P$이면, $f(x) \to f(P)$일 때 연속이라고 정의하자.
+
+\section{$x_k \in V$이다. 이때 “$k \to \infty \Rightarrow x_k \to L$이다”의 엄밀한 정의}  \label{chap:inf}
+
+$\forall \epsilon > 0$, $\exists M > 0$, s.t. $k > M \Rightarrow |f(x_k)-L| < \epsilon$
+
+\section{ $x_k \in D$이다. ``$( k \to \infty \Rightarrow x_k \to p ) \land ( x \to p \Rightarrow f(x) \to L)$ $\Rightarrow$ $(k \to \infty \Rightarrow f(x_k) \to L)$''를 증명}
+
+$\forall \epsilon > 0$,  자연수 $M$을 다음과 같은 방식으로 잡자.
+
+그리고, \ref{chap:imt}\sectionname 에서 보인 바와 같이 $|p-x_k|< \epsilon \Rightarrow |L - f(x_k)|$를 만족하는 양수 $\delta$를 잡을 수 있다.
+\ref{chap:inf}\sectionname 에서 보인 바와 같이 $k > M \Rightarrow |f(x_k)-L| < \delta$를 만족하는 양수 $M$를 잡을 수 있다.
+
+이렇게 $M$을 잡게 되면, $|p-x_k|< \epsilon \Rightarrow |L - f(x_k)|$가 성립하게 되니, 
+주어진 명제가 성립힌다.

@@ -1,0 +1,47 @@
+\chapter{자기주도적 학습 과제 7 (13.3~6)}
+
+\section{단위속력곡선 뜻, 속력이 0이 되지 않는 매끄러운 곡선은 단위속력곡선이 되도록 재매개화 가능 증명}
+\paragraph{단위속력곡선}
+$\frac{dr}{ds} = 1$이 되게끔 $s$로 재매개화 한 곡선이다. 
+
+\paragraph{증명}
+조건에 의해, $\left| \frac{dr}{dt} \right| > 0$이며, 이 값은 연속적이다. 따라서, 적분할 수 있다.
+$s = \int_0^{t_0} \left| \frac{dr}{dt} \right|  dt$로 정의할 수 있다. 
+이 함수는 증가함수이기 때문에, 당연히 역함수가 존재한다. 따라서 $t = f(s)$라고 둘 수 있다.
+
+따라서, $r(f(s)))$로 곡선을 재매개화 하게 되면, $s$로 미분했을 때, $ \left| \frac{d (r(f(s)))}{ds} \right| = \left|\frac{dr}{dt}\left| \frac{dt}{dr}\right| \right| = 1$이 되게 된다. 증명 끝.
+
+
+\section{$T$, $N$, $B$를 4차원 공간에 놓인 곡선으로 확장}
+이 이하는 , `Raffles Junior College'의 `Lee Mun Yew '가 작성한 `Curves in Four-Dimensional Space'을 참고한 것임을 밝힌다.
+
+
+일단, $T$와 $N$은 큰 무리 없이 정의할 수 있는 것처럼 보인다. 그런데 이 둘에 수직한 벡터는 어떻게 구할까. 외적을 사용하긴 어렵다. 수직한 공간의 기저가 2개이기 때문이다.
+
+$$B = \frac{dN}{dS} - \left(\frac{dN}{ds} \cdot T\right)T -  \left(\frac{dN}{ds} \cdot N\right)N$$으로 $B$를 정의한다. 
+이것은 마치, 선형 대수 시간에 배운 그람-슈미츠 직교화 과정을 보는 것 같은 느낌이다. (두 벡터의 수직인 어떤 벡터를 잡는 그런 느낌이다.)
+
+하지만 4차원은 기저가 4개이므로, 하나를 더 잡을 수 있는데, 그것을 $D$라고 잡았다.
+
+\section{$\tau$와 $\kappa$를 4차원 공간에 놓인 곡선으로 확장}
+$\tau$와 $\kappa$는 위 정의대로 하면, 3차원의 것을 그대로 정의할 수 있을 것으로 보인다. 그리고, 하나가 더 필요하다.
+이 보고서에서는 $\sigma$라는 값을 하나 더 도입해서 해결한다.
+$$\sigma D = \frac{dB}{ds} - \left(T \cdot \frac{dB}{ds}\right)T - \left(N \cdot \frac{dB}{ds}\right)N - \left(T \cdot \frac{dB}{ds}\right)B $$
+
+
+\section{$\tau = 0$이면, 그 곡선은 한 평면 위에 놓여 있음 증명}
+정의에 의해서, $\frac{dB}{ds} = \tau N = 0$이므로, $B$는 일정하다! 따라서, $T$와 $N$이 이루는 평면은 일정하다. 근데$r$은 $T$와 $N$위에서 움직이므로, (속력이 이 두 벡터에 대해 표현할 수 있기에,,,)결국 한 직선 위에 움직인다.
+\section{3차원 공간에 구면좌표계가 주어졌을 때, 이 공간에 놓인 매끄러운 곡선의 속도와 가속도 구하는 공식 }
+위키피디아에 따르면,
+
+$$\hat{r} = \cos \theta \sin \phi \hat{x} + \sin \theta \sin \phi \hat{y} + \cos \phi \hat{z}$$
+$$\hat{\theta} = - \sin \theta \hat{x} + \cos \theta \hat{y} $$
+$$\hat{\phi} = \cos \theta \cos \phi \hat{x} + \sin \theta \cos \phi \hat{y} - \sin \phi \hat{z}$$
+에 있을 때,
+
+$$\mathbf{r} = r \hat{\mathbf{r}}$$
+
+$$\mathbf{v} = \dot{r} \hat{\mathbf{r}} + r \dot{\theta} \sin \theta \hat{\mathbf{\theta}} + r \dot{\phi} \hat{\mathbf{\phi}} $$
+
+$$\mathbf{a} = \left(\ddot{r} - r \dot{\phi}^2 - r \dot{\theta}^2 \sin^2 \phi \right)\hat{\mathbf{r}} + \left(r \ddot{\phi} + 2 \dot{r} \dot{\phi} - r \dot{\theta}^2 \sin \phi \cos \phi \right) \hat{\mathbf{\theta}} + \left( r \ddot{\theta} \sin \phi + 2 dot{r}\dot{\theta} \sin \phi + 2 r \dot{\phi}\dot{\theta} \cos \phi \right) \hat{\mathbf{\phi}}$$
+가 된다. 무섭게 생겼다.

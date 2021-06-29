@@ -1,0 +1,41 @@
+\chapter{자기주도적 학습 과제 9 (2.5, 10.2, 14.1)}
+$D$는 $\mathbb{R}^2$의 부분집합을 나타냅니다.
+\section{닫힌집합 $D$ 내부에 수렴하는 수열의 수렴값은 집합 내부에 있다. (힌트: 여집합의 내부점, 모순)} \label{chap:sub}
+
+$L \not\in D$면  $L \in \mathbb{R}^2 \setminus D$이다. 정의에 의해 $L$은 $\mathbb{R}^2 \setminus D$의 내부점, 아니면 경계점이 된다. 경계점일 경우, $D$의 경계점도 되므로 모순이다. 따라서 $L$은 $\mathbb{R}^2 \setminus D$의 내부점이다. 따라서 적당한 양수 $\epsilon$이 존재해서, $|L-x|<\epsilon$인 점들은 역시 $\mathbb{R}^2 \setminus D$의 내부점이다. 그렇다면
+극한의 정의에 의해, $\forall \epsilon >0$에서, $\exists M > 0$이여서 , $x_k \in D, k>M \Rightarrow  \left|L - f(X_k)\right|<\epsilon$이다. 근데, 위의 정의에 의해 $x_k \in \mathbb{R}^2 \setminus D$이다. 모순이다.
+따라서, $L \in D$이다.
+
+\section{유계인 집합 $D$ 내부의 모든 수열은, 수렴하는 부분수열을 갖는다. (힌트: Bolzano-Weierstrass 정리)}
+Bolzano-Weierstrass 정리에 의해 성립한다. $D$를 포함하는 큰 직사각형을 잡고, 적당히 합동인 직사각형으로 쪼개는 것을 반복하며, 각 직사각형 중에는 무한한 점을 갖은 사각형이 있다.
+
+\section{유계인 닫힌집합 $D$에서 정의된 실수값 함수도 유계이다. }
+$\left\{x_k \right\}$가 유계가 아니라고 가정하자. 일관성을 잃지 않고, 그렇다면 한 점 $p$가 존재해서, $n \to \infty$일 때, $x_n \to p$이고, $f(x_n) \to \infty$이다.
+근데, \ref{chap:sub}\sectionname에서 이미 $p \in D$이므로, $f(p)$가 존재해야 한다. 
+
+$f$가 연속함수라면, 모순이다.
+
+$f$가 연속함수가 아니라면, 다른 값을 갖는 것이 가능하다, 
+\section{$f(x,y)=\sin x + \cos y$가 $\mathbb{R}^2$에서 균등연속임을 보이시오. (힌트: 균등연속 정의 줌)}
+\paragraph{균등연속 정의}
+$f: D \to \mathbb{R}^m$에 대해,
+
+$\forall \epsilon > 0$, $\exists \delta >0$, $\forall s \in D$, $\forall t \in D$:
+
+$\left(|s-t|< \delta \to |f(s)-f(t)| < \epsilon\right)$여야 한다.
+
+
+\paragraph{보조정리}
+
+$\forall x, y \in \mathbb{R}$에 대해서, 
+$|x-y|<|\sin(x)-\sin(y)|$, $|s-t|<|\cos(x)-\cos(y)|$이다.
+증명: MVT를 이용한다. $\sin$함수와 $\cos$함수를 미분해도 그들이니, 미분한 값의 크기는 1보다 무조건 같거나 작다.
+
+
+\paragraph{증명}
+
+$\epsilon > 0$, 
+$s=(s_1, s_2),t=(t_1, t_2) \in R^2$에 대해, $|s-t|<\frac{\epsilon}{2}$면 $|s_1 - t_1|<\frac{\epsilon}{2}$이고, $|s_2 - t_2|<\frac{\epsilon}{2}$이다. 따라서,
+
+$$|f(s)-f(t)| = \sqrt{\left(\sin s_1-\sin t_1\right)^2 + \left(\cos s_2-\cos t_2\right)} \le \frac{\epsilon}{\sqrt{2}} < \epsilon$$
+이다. 따라서 균등연속이다.

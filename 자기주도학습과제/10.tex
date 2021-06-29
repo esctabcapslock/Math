@@ -1,0 +1,74 @@
+\chapter{자기주도적 학습 과제 10}
+$I=[a,b]$는 길이가 양수인 닫힌구간, $f$는 $I$에서 정의된 실수값 함수입니다. 다음의 (간략하게 적혀있는) 명제를 증명해야 한다.
+
+\section{$I$는 닫힌 집합이다}
+$I=[a,b]$라고 하자.($a<b$) 따라서 모든 $x \in I$는 $a \le x \le b$를 만족한다.
+\paragraph{$x=a$면} 아무리 작은 $b-a>\delta>0$를 잡아도, $x-\delta \not\in I$이고, $x+\delta \in I$이다. 따라서, $x$는 경계점이다.
+\paragraph{$a<x<b$면} $\delta = \min (x-a, b-a)$면, $\left\{x' | \left|x-x'\right|<\delta\right\} \in I$므로, $x$는 내부점이다.
+\paragraph{$x=b$}면, $x=a$와 같은 상황이므로 x는 경계점이다.
+\paragraph{그 이외의 경우}, $\delta = \min (|x-a|, |b-a|)$면, $\left\{x' \;|\; \left|x-x'\right|<\delta\right\} \in I^c$이며, $\forall \delta$에 대해서도, $x \not\in I$므로, 이는 $I$의 경계점도, 내부점도 될 수 없다.
+
+따라서, 모든 경계점이 $I$에 포함되므로, $I$는 닫힌집합이다.
+
+
+\section{항상 상합보다 하합이 크다. (분할, 상합, 하합의 정의 주어짐)}
+\paragraph{분할}
+$P$가 $I$의 분할이라고 하자. $P=\left\{x_0, x_1, \cdots x_n \right\}$이다. 이렇다면, $a=x_0 <x_1 < \cdots < x_n = b$가 성립한다는 말이다.
+
+
+그리고,
+$M_i = \mathrm{sup} \left\{ f(c_i) \;|\; x_{i-1} \le c_i \le x_i \right\}$
+$m_i = \mathrm{inf} \left\{ f(c_i) \;|\; x_{i-1} \le c_i \le x_i \right\}$로 정의하자. 상한과 하한이라는 뜻이다.
+
+\paragraph{상합} $$U(f,p) = \sum_{i=1}^n M_i \Delta x_i$$
+\paragraph{하합} $$L(f,p) = \sum_{i=1}^n m_i \Delta x_i$$
+
+\paragraph{증명}
+$m_i < M_i$이다. 따라서, $m_i  \Delta x_i <  M_i \Delta x_i$이고, $\sum_{i=1}^n m_i \Delta x_i < \sum_{i=1}^n M_i \Delta x_i$이다.
+
+따라서, $L(f,p) < U(f,p)$이다.
+
+
+\section{세련분할은 원래 분할보다 상합은 작아지고 하합은 커진다.} \label{chap:hahapre}
+
+\paragraph{보조정리} $a<b<c$일 때, $\mathrm{sup}([a,b])(b-a) + \mathrm{sup}([b,c])(b-c) \le \mathrm{sup}([a,c])(c-a)$이다.
+
+정의에 의해서, $\max(\mathrm{sup}([a,b]), \mathrm{sup}([b,c])) = \mathrm{sup}([a,c])$이다. 따라서, $\mathrm{sup}([a,b]) \le \mathrm{sup}([a,c]) $, $\mathrm{sup}([b,c]) \le \mathrm{sup}([a,c]) $이다.
+
+
+\paragraph{증명} $P$의 세련분할을 $Q$라고 하자. 세련분할의 정의에 의해 $$Q = \left\{ x_0=x_{0,0}, x_{0,1}, \cdots x_{0,a_0}, x_1=x_{1,0}, x_{1,1}, \cdots x_{1,a_1}, \cdots x_n \right\}$$이라고 하자. $a_n$은 각 항이 자연수인 수열이다.
+
+이때, 보조정리를 귀납적으로 적용하면, $$\sum_{i=0}^{a_k-1} \mathrm{sup}([x_{k,i}]) (x_{i+1}-x_{i}) \le M_k \delta x_k$$가 성립하게 된다.
+따라서 이것을 다 더해주면, $U(f,Q) \le U(f,P)$가 성립한다. 
+
+하합에서도, 마찬가지로 성립한다.
+
+
+
+
+\section{$f$는, 분할을 적당히 잡아 상합과 하합을 $\epsilon$보다 작게 만들 수 있다.} \label{chap:hahap}
+$\epsilon_0 = \frac{\epsilon}{b-a+1}$라 두자.
+다음과 같은 알고리즘을 생각한다.
+
+$x_k$에 대해서, 생각하자.
+
+$x>x_k$중에서, $f(x) \ge f(x_k)+\epsilon_0$ 또는 $f(x) \le f(x_k)-\epsilon_0$인 점들 중 가장 작은 점을 잡자. 이 값이 $b$보다 작으면  $x_k+1$로 정의한다. $b$아니면 멈춘다. 
+
+일단, $x>x_k$임은 자명하다. 그리고, 이 반복문이 무한히 반복한다면, 또 $x_k$는 증가하므로, $b$보다 작으므로, 단조수렴 정리에 의해 어떤 값에 수렴할 것이다. 그렇다면, 이 값을 기준으로 엡실론-델타 논법을 적용했을 때, 차이가 $\epsilon_0$가 되게 하는 점을 모든 $\epsilon$에 대해 잡을 수 있고, 따라서 $f$는 이 점에서 수렴하지 않으므로 연속의 정의에 어긋난다.
+따라서 이 반복문은 유한번 시행 후 종료될 것이다. $n-1$회 실행될 것이다.
+
+그리고, $\max(\mathrm{sup}[x_k, x_k+1] - \max(\mathrm{inf}[x_k, x_k+1] = \epsilon_0$이 성립할 것이다.
+
+따라서, $P=\left\{ x_0, x_1 \cdots x_n \right\}$로 잡으면, $U(f,P)-L(f,P) \le \epsilon_0 (b-a) < \epsilon$이 성립한다.
+
+\section{$f$는, 상적분값과 하적분값이 일지한다. (상적분, 하적분 정의 주어짐.)}
+\paragraph{상적분, 하적분}
+상적분은 $U(f,P)$들의 하한이다. 하적분은 반대로 정의된다.
+
+\paragraph{상적분값보다 하적분값이 크다면}, 각각의 적분값을 만드는 분할들이 있을 것이다. 그 분할의 합집합을 구하면, 공통 세련분할을 구할 수 있고 이를 $P$라고 하면, \ref{chap:hahapre}\sectionname과 모순이다. 따라서 이는 거짓이다.
+
+\paragraph{상적분값보다 하적분값이 작다면} 둘은 $\epsilon_1$만큼 차이가 날 것이다. 그렇다면, \ref{chap:hahap}\sectionname에서 보인 것과 같이, 이들보다 더 적은 차이가 나게 하는 분할 $P$가 존재할 것이다. 그렇다면, 상적분값과 하적분값중 한 값이 수정되어야 할 것이다. 따라서 모순이다.
+
+따라서, 상적분값과 하적분값이 같다.
+
+

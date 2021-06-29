@@ -1,0 +1,19 @@
+\chapter{자기주도적 학습 과제 8 (14.5-7)}
+\section{국소극값과, 절대극값}
+\paragraph{극소극값}
+점 $a,b$를 중심으로 하는 원 $S$가 존재해허, $(z,y) \in S$에서,  $f(a,b) \le f(x,y)$를 만족하면, 극솟값, 반대면 극댓값이라고 한다.
+
+\paragraph{절대극값}
+정의역 $D$의 모든 점 $(x,y)$에서,  $f(a,b) \le f(x,y)$를 만족하면, 최솟값, 반대면 최댓값이라고 한다.
+\section{$\varnothing \ne D \subset \mathbb{R}^2 $에서, $f: D \to \mathbb{R}$이다. `$f$는 $D$의 모든 점에서 국소극댓값과 국소극솟값을 가진다.' 가능하냐.}
+$f(x,y)=0$이이면, 어떤 정의역의 부분집합$S$와 원소 $(x,y) \in S$에 대해서, $f(a,b) \le f(x,y)$이지, $f(a,b) \ge f(x,y)$이니, 모든 점에서 극댓값과 극솟값을 갖는다.
+
+\section{$f: \mathbb{Q} \to \mathbb{R}$, $f: x \mapsto cos (x)$는 어디서 극값을 갖는가}
+$(0,1)$에서만 극값을 갖는다. 실수를 정의역으로 갖는 일반적인 코사인함수는 $x=n \pi$꼴에서 극값을 갖는다. 하지만, $n!=0$인 경우, $n \in \mathbb{Q}$일 때, $n \pi$는 무리수이다.
+따라서, 이 수에 가장 가까운 유리 $x$를 잡는다고 해도, 실수의 완비성에 의해, 이 실수보다 $n \pi$더 가까운 유리수를 잡을 수 있다. 그리고, 이 값은 $f(x)$보다 더 $f(n\pi)$에 가까울 것이다. 따라서, 이 경우에는 극값을 잡을 수 없다.
+
+\section{이변수 함수의 일차근사함수}
+$f(a+h, b+k) = f(a,b) +  \left| \left(hf_x + kf_y\right)\right|_{(a,b)}$
+
+\section{이변수 함수의 이차근사함수}
+$f(a+h, b+k) = f(a,b) +  \left.\left(hf_x + kf_y\right)\right|_{(a,b)} +   \left.{{1} \over {2!}} \left(h^2 f_{xx} + 2hk f_{xy}+ k^2 f{yy}\right) \right|_{(a,b)}$

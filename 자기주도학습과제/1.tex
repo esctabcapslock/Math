@@ -1,0 +1,103 @@
+
+\chapter{자기주도적 학습 과제 1 (12.1-4)}
+
+\section{수학에서 ‘공간(space)’이란 어떤 의미를 갖나요? `공간을 정의한다’라는 것은 무슨 뜻인가요?}
+\paragraph{공간}
+	특별한 속성과 몇 가지 부가적 구조를 갖는 집합
+\paragraph{구조}
+	임의의 집합이 주어졌을 때 여기에 부여한 수학적 성질로 인해 그 집합이 갖추게 되는 형태
+
+\section{‘유클리드 공간’의 정의는 무엇인가요?}
+
+\paragraph{}{영문 위키의 정의}
+\begin{itemize}
+    \item 유클리드의 평행선의 공리와 피타고라스의 정리가 성립하는 $n$차원 공간
+    \item 유클리드가 생각했던 거리와 길이와 각도를 좌표계를 도입하여, 임의 차원의 공간으로 확장한 것
+\end{itemize}
+
+\paragraph{국문 위키의 정의}
+\begin{itemize}
+    \item 유한 차원의, 실수 기반, 내적이 정의된 벡터 공간 $\mathbb{R}^n$ 은 $\mathbb{R}$을 $n$회 데카르트 곱한 집합이다.
+    \item 그 위에서, 내적은, $\left\langle u,v \right\rangle=\sum_{i=1}^{n}{u_iv_i}$로 정의
+\end{itemize}
+	
+\section{내적의 `기하적 정의'와 `대수적 정의'를 비교하고 동치임을 증명하시오.}
+
+\paragraph{기하학적 방법}
+\begin{itemize}
+    \item 직관적임
+    \item 엄밀하지 않으며, 갈이가 $0$일 때, 예외가 생겨서 정의가 아름답지 않음.
+    \item N차원 확장이 불편함 (4차원 으악 ㅠㅠ)
+    
+\end{itemize}
+
+\paragraph{대수적 방법}
+\begin{itemize}
+    \item 엄밀하게 정의할 수 있음
+    \item $N$차원으로 쉽게 확장할 수 있다.
+    \item 비-작관적
+\end{itemize}
+	
+	
+\paragraph{동치 증명}
+
+두, 벡터 $a, b$를 생각하자.
+$\left|a\right|\left|b\right|=0$이면, 두 정의 모두 $a \cdot b=0$ 이 되는 것은 자명하다.
+
+아닌 경우를 생각하자.
+
+제2코사인 정리에 의해서, 
+
+$$|a|^2 + |b|^2 - |a-b|^2 = 2ab \cos \theta$$
+$$\sum_{i=0}^{n-1} a_i^2 + \sum_{i=0}^{n-1}b_i^2 - \sum_{i=0}^{n-1} \left(a_i-b_i\right)^2$$
+$$=\sum_{i=0}^{n-1}a_i^2+\sum_{i=0}^{n-1}b_i^2-\sum_{i=0}^{n-1}a_i^2-\sum_{i=0}^{n-1}b_i^2+\sum_{i=0}^{n-1}{2a_ib_i}$$
+$$=\sum_{i=0}^{n-1}{2a_ib_i}= a \cdot b =2\left|a\right|\left|b\right|\cos \theta$$
+따라서, 두 정의는 동치이다.
+
+\section{외적의 `기하적 정의'와 `대수적 정의'를 비교하시오.}
+
+\paragraph{기하적 방법}
+\begin{itemize}
+    \item 직관적이다.
+    \item 각도가 주어진 경우 편함
+    \item 각도를 모른다면 삼각함수의 지옥을 맛볼 수 있음.
+\end{itemize}
+
+
+\paragraph{대수적 방법}
+\begin{itemize}
+    \item 정의가 간편
+    \item 행렬식과 연관 지을 수 있어 행렬식의 성질을 이용할 수 있음.
+    \item 높은 차원으로 확장하기 쉽다.
+\end{itemize}
+
+
+\paragraph{동치성 증명}
+
+
+	1차워 공간에서는 자명하다
+	3차원 공간에서의 증명은 다음과 같다. (그 이상은 교과서에다 다루지 않는다.)
+	두, 벡터 $a$, $b$ 생각.
+	$\left|a\right|\left|b\right|=0$ 이면, $a \times b =0$은 자명하다.
+	
+	아닌 경우를 생각하자.
+	$$\left|a\right|^2\left|b\right|^2-\left|a\times b\right|^2=\left(a_1^2+a_2^2+a_3^2\right)\left(b_1^2+b_2^2+b_3^2\right)-\left(|a_2b_3-a_3b_2,\;a_3b_1-a_1b_3,\;a_1b_2-a_2b_1|\right)^2$$
+	$$= a_1^2b_1^2+a_2^2b_2^2+a_3^2b_3^2+\left(a_1^2b_2^2+a_2^2b_3^2+a_3^2b_1^2+a_1^2b_3^2+a_3^2b_2^2+a_2^2b_1^2\right)-$$$$  \left(a_2^2b_3^2+a_3^2b_2^2+a_3^2b_1^2+a_1^2b_3^2+a_3^2b_1^2+a_1^2b_3^2\right)+2\left(a_2b_2a_3b_3+a_3b_3a_1b_1+a_1b_1a_3b_3\right)$$
+	$$=a_1^2b_1^2+a_2^2b_2^2+a_3^2b_3^2+2\left(a_2b_2a_3b_3+a_3b_3a_1b_1+a_1b_1a_3b_3\right)$$
+	$$= \left(a_1b_1+a_2b_2+a_3b_3\right)^2=a\cdot b$$
+	$$\therefore |a\ \times b|^2\ =\ |a|^2\ |b|^2\ -\ |a\ \cdot b\ |^2\ =\ \ |a|^2\ |b|^2\ -\ |a|^2\ |b|^2\ cos^2\ \theta$$
+	$$=\ |a|^2\ |b|^2\ sin^2\ \theta$$
+	$$\therefore\left|a\times b\left|=\left|a\right|\right|b\right|\left|sin\theta\right|$$
+
+\section{이차원 벡터의 외적을 정의할 수 있는가}
+
+\paragraph{기하적 관점에서 고찰}
+
+
+외적의 결과는 두 벡터의 수직이여야 함.
+
+그 결과가 같은 평면 위에 있다면, 각도의 덧셈 상에서 모순이 발생함.
+
+따라서 모순임.
+
+    
